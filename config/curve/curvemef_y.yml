@@ -1,0 +1,47 @@
+pro_name: CurveNew
+#resume: True
+precision: 32
+datas:
+  channel: 1
+  batch_size: 8
+  num_workers: 4
+  # test_path: dataset/ee100ty
+  # test_path: dataset/mefby
+  test_path: /home/pp/ALgorithms/cnn_curve/dataset/test03y
+  test_size: None
+  train_path: dataset/data/train1Y
+device: cuda
+log_interval: 50
+log_intervals:
+  num: 50
+loss_term:
+  name:
+    col_loss: L1
+    pix_loss: MSE
+    fre_loss: LEX
+    stc_loss: SSIM
+  weights:
+    col_loss: 2.0
+    pix_loss: 0.0
+    fre_loss: 0.0
+    stc_loss: 1.0
+model:
+  model_name: ghost_curve_2iny
+optim_term:
+  lr_schedule:
+    T_max: 30
+    eta_min: 5.0e-05
+    name: CosineAnnealingLR
+  optimizer:
+    lr: 0.001
+    name: AdamW
+    weight_decay: 0.05
+  warmup:
+    name: linear
+    ratio: 0.0001
+    steps: 100
+save_dir: workspace/curve/curvemef_y
+seed: 42
+total_epochs: 15
+val_intervals:
+  num: 1
