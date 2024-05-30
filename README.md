@@ -1,19 +1,18 @@
 <div align="center">
 
 # CurveMEF: Multi-Eposure Fusion via Curve Embedding Network
-**Fast lightweight physical informed multi-exposure fusion model.**
+**Fast lightweight physical informed multi-exposure fusion model, Neurocomputing.**
 
 </div>
 
-## :open_book: Benchmarks
+## Introduction
+This is official Pytorch implementation of [**CurveMEF: Multi-Eposure Fusion via Curve Embedding Network**](https://doi.org/10.1016/j.neucom.2024.127915).
 
-[//]: # (<img src="Figure/Table1.png" />)
+### Framework
+<img src="Figure/CurveMEF.png" width="800" alt="CurveMEF" />
+<img src="Figure/CurveNet.png" width="800" alt="CurveNet" />
 
-[//]: # (<img src="Figure/Table2.png" />)
-
-[//]: # (<img src="Figure/Table3.png" />)
-
-### ⚡️Quick Start
+## ⚡️Quick Start
 
 First, install requirements and setup CurveMEF following installation guide.
 The pre-trained weight was trained by `config/curve/curvemef_rgb.yml` and `config/curve/curvemef_y.yml`.
@@ -23,8 +22,8 @@ The pre-trained weight was trained by `config/curve/curvemef_rgb.yml` and `confi
 ```bash
 python inference.py -config CONFIG_PATH
 ```
-
 ****
+
 
 ## Install
 
@@ -129,7 +128,15 @@ python inference.py -config CONFIG_PATH
    python train.py -config config_path
    ```
 
-4. **Visualize Logs**
+4. **Visualize Train performance**
+
+   - At the end of each `epoch` in the training phase, the model tests a pair of  multi-exposure images, and the test results are saved in the `Samples` folder.
+   - If you want to replace the test pair with your own images, you can store `test1pngy.pt` and `test1png.pt` as your own image pairs.
+   The tensor in `test1png.pt` is of the size as `[1, 6, H, W]`, and the tensor in `test1pngy.pt` is of the size as `[1, 2, H, W]`.
+   - If you want to remove this feature, you need to comment the `self.test_tensor` code in `model_interface.py`.
+
+   
+5. **Visualize Logs**
 
     Logs are save in [`wandb`](https://wandb.ai/).
 
@@ -144,10 +151,28 @@ python inference.py -config CONFIG_PATH
    Change **A_dir**, **B_dir**, **Fused_dir** and **save_dir** to your own path.
 
 ****
+## :open_book: Benchmarks
+### Performance Comparison
+<img src="Figure/Table1.png" width="1200" alt="Table1" />
+<img src="Figure/Table2.png" width="1200" alt="Table2" />
+<img src="Figure/Table3.png" width="1200" alt="Table3" />
 
-## Complexity Comparison
+### Visual Comparison
+<img src="Figure/dock.png" width="1200" alt="dock" />
+<img src="Figure/Flowers.png" width="1200" alt="Flowers" />
+<img src="Figure/LightHouse.png" width="1200" alt="LightHouse" />
 
-[//]: # (<img src="Figure/Table4.png" />)
+### Complexity Comparison
+<img src="Figure/Table4.png" width="1200" alt="Table4" />
+
+- [1] https://github.com/SunnerLi/DeepFuse.pytorch
+- [2] https://github.com/makedede/MEFNet
+- [3] https://github.com/Beta-Hu/PMGI
+- [4] https://github.com/1318133/LPUIF-A-Lightweight-Pixel-Level-Unified-Image-Fusion-Network
+- [5] https://github.com/Linfeng-Tang/SwinFusion 
+- [6] https://github.com/ytZhang99/U2Fusion-pytorch
+- [7] https://github.com/miccaiif/TransMEF
+- [8] https://github.com/HaoZhang1018/IID-MEF (We refer to this version for implement pytorch code of IID-MEF.)
 
 ****
 ## Citation
@@ -155,11 +180,16 @@ python inference.py -config CONFIG_PATH
 If you find this project useful in your research, please consider cite:
 
 ```BibTeX
-@misc{=curvemef,
-    title={CurveMEF: Multi-Eposure Fusion via Curve Embedding Network.},
-    author={Pai Peng, Zhongliang Jing, Han Pan, Yang Liu, Buer Song},
-    howpublished = {\url{https://github.com/PiratePai/CurveMEF}},
-    year={2024}
+@article{PENG2024127915,
+title = {CurveMEF: Multi-eposure fusion via curve embedding network},
+journal = {Neurocomputing},
+pages = {127915},
+year = {2024},
+issn = {0925-2312},
+doi = {https://doi.org/10.1016/j.neucom.2024.127915},
+url = {https://www.sciencedirect.com/science/article/pii/S0925231224006866},
+author = {Pai Peng and Zhongliang Jing and Han Pan and Yang Liu and Buer Song},
+keywords = {Multi-exposure fusion, Image fusion, Curve estimation, Physical informed neural network, Deep learning}
 }
 ```
 
