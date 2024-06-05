@@ -6,7 +6,7 @@
 </div>
 
 ## Introduction
-This is official Pytorch implementation of [**CurveMEF: Multi-Eposure Fusion via Curve Embedding Network**](https://doi.org/10.1016/j.neucom.2024.127915).
+This is official Pytorch implementation of [**CurveMEF: Multi-Eposure Fusion via Curve Embedding Network**](https://www.sciencedirect.com/science/article/pii/S0925231224006866).
 
 ### Framework
 <img src="Figure/CurveMEF.png" width="800" alt="CurveMEF" />
@@ -181,8 +181,9 @@ If you find this project useful in your research, please consider cite:
 
 ```BibTeX
 @article{PENG2024127915,
-title = {CurveMEF: Multi-eposure fusion via curve embedding network},
+title = {CurveMEF: Multi-exposure fusion via curve embedding network},
 journal = {Neurocomputing},
+volume = {596},
 pages = {127915},
 year = {2024},
 issn = {0925-2312},
