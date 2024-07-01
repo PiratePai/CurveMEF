@@ -107,7 +107,7 @@ python inference.py -config CONFIG_PATH
 
     Copy and modify an example yml config file in config/curvemef.
 
-    Change **pro_name** to where you
+    Change **pro_name** to your own project name.
 
     Change **save_dir** to where you want to save model.
 
