@@ -6,7 +6,7 @@
 </div>
 
 ## Introduction
-This is official Pytorch implementation of [**CurveMEF: Multi-Eposure Fusion via Curve Embedding Network**](https://www.sciencedirect.com/science/article/pii/S0925231224006866).
+This is official Pytorch implementation of [**CurveMEF: Multi-Exposure Fusion via Curve Embedding Network**](https://www.sciencedirect.com/science/article/pii/S0925231224006866).
 
 ### Framework
 <img src="Figure/CurveMEF.png" width="800" alt="CurveMEF" />
