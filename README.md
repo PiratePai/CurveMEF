@@ -1,6 +1,6 @@
 <div align="center">
 
-# CurveMEF: Multi-Eposure Fusion via Curve Embedding Network
+# CurveMEF: Multi-Exposure Fusion via Curve Embedding Network
 **Fast lightweight physical informed multi-exposure fusion model, Neurocomputing.**
 
 </div>
